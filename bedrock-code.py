@@ -16,7 +16,7 @@ if not AWS_ACCESS_KEY_ID or not AWS_SECRET_ACCESS_KEY:
     sys.exit(1)
 
 # Initialize Bedrock LLM with the correct region from environment variable
-bedrock_llm = BedrockChat(model_id="meta.llama3-2-11b-instruct-v1:0", region_name=AWS_REGION)
+bedrock_llm = Bedrock(model_id="meta.llama3-2-11b-instruct-v1:0", region_name=AWS_REGION)
 
 def split_code_with_langchain(content, chunk_size=3000, chunk_overlap=200):
     splitter = CharacterTextSplitter(
